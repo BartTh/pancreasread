@@ -10,8 +10,8 @@ In order to use the pancreatic analysis tool there are certain steps to be follo
 4. Connect to the virtual machine by clicking SSH
 5. When the command line interface appears (linux) type the following:
   > screen
-  - press spacebar to clear the screen help
-  > cd flask_app
+6. press spacebar to clear the screen help
+  > cd flask_app;
   > gunicorn -t 400 hello:app
 6. Navigate to the external IP address by clicking the address left of SSH mentioned in step 4
 7. Upload a scan that has been converted to the .nii.gz format
