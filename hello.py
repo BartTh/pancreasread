@@ -105,7 +105,6 @@ def stream():
     first_file(UPLOAD_FOLDER + EXTENSION)
     g = proc.Group()
     bashCommand = "python3 /home/bartrthomson/igor2/bin/cumed-predict /tmp/test.json /home/bartrthomson/results/antwoord/fold-01/checkpoints/cumed-56000 /tmp/"
-    bashCommand = "python3 ~/igor2/bin/create-folds ~/results/tfrecords/metadata.json ~/results/tfrecords/metadata ~/results/antwoord/ --hyperparameters ~/data/cumed-hyperparameters.json --num-folds 5"
     sys.path.append('/home/bartrthomson/igor2/bin')
     p = g.run( [ "bash", "-c", bashCommand ] )
     def read_process():
@@ -113,11 +112,9 @@ def stream():
             lines = g.readlines()
             for proc, line in lines:
                 yield line
-                term = b'fold 5' #term we want to search for::::       Done. Terminating...
-#                term = b'Done. Terminating...'
+                term = b'Done. Terminating...'
 
                 if term in line: #see if one of the words in the sentence is the word we want
-#                    output = first_file(UPLOAD_FOLDER + EXTENSION)
                     output = '/tmp/SCAN-segmentation.npy'
                     print('SEGMENTED FILE LOCATION::: ' + output)
                     data = np.load(output)
