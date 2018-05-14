@@ -15,7 +15,7 @@ In order to run a virtual machine on the google cloud platform the following ste
       - Settings which are not mentioned can be left to default
 1. Install CUDA 8.0:
       > sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
-      sudo apt-get update
-      sudo apt-get install cuda
+      > sudo apt-get update
+      > sudo apt-get install cuda
 
 
