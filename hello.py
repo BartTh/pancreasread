@@ -86,7 +86,6 @@ def index():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#            copy2('/tmp/' + filename, '/home/bartrthomson/flask_app/static/Pancreas_PANCREAS_0057.nii')
             copy2('/tmp/' + filename, '/home/bartrthomson/flask_app/static/Uploaded_Scan.nii')
 
             for src_name in glob.glob(os.path.join(UPLOAD_FOLDER, filename)):
