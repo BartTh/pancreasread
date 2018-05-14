@@ -12,11 +12,11 @@ Employing CNNs in the processing of volumetric data has taken a lot of effort, 2
 Goal
 -----
 
-The file [hello.py](https://github.com/BartTh/pancreasread/blob/master/hello.py) is a Flask based web application that brings the potential benefit of deep learning to the clinic. This web application has a basic uploading interface, a processing page and an image review page. 
+The intention of this project was to make implementation of deep learning algorithms more feasible in the general clinic. It was thus not about performance and evaluation of a certain algorithm but about creating an environment that allows for exploration of possibilities. With this in mind it was important that the application has an interchangeable algorithm, and can be changed easily for different purposes. The main file [hello.py](https://github.com/BartTh/pancreasread/blob/master/hello.py) is Flask based where the deep learning prediction algorithm is run in linux, emphasizing application modularity. This web application has a basic uploading interface (/), a processing page (/stream) and an image review page (/view). The application is based on HTML5 and Javascript to prevent necessity of external software allowing for direct usage in the a browser controlled by the clinician.
 
 # Manual
 
 The following files are presented:
 - [hello.py](https://github.com/BartTh/pancreasread/blob/master/hello.py) &mdash; Main file processing and managing data
 - [user_readme](https://github.com/BartTh/pancreasread/blob/master/User_readme.md) &mdash; How to use this tool as a clinician
-- [developer_readme](https://github.com/BartTh/pancreasread/blob/master/Developer_readme.md) &mdash; How to use set up a VM to run this application on the google cloud platform
+- [developer_readme](https://github.com/BartTh/pancreasread/blob/master/Developer_readme.md) &mdash; How to use and set up a VM to run this application on the google cloud platform
