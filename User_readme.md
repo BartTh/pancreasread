@@ -9,8 +9,9 @@ Connect to the virtual machine (VM)
 In order to use the pancreatic analysis tool there are certain steps to be followed:
 
 1. Use Google Chrome to continue the following steps
-1. Login to the [google cloud platform](https://console.cloud.google.com/compute/) with the pancreasread account
+1. Login to the [google cloud platform](https://console.cloud.google.com/compute/) with the pancreasanalyse account
 1. Start the instance by clicking on the three vertical dots to the far right of the instance name
+1. Click the option `Begin` from the drop down menu that appears
 1. Wait for the virtual machine to be ready
 1. Connect to the virtual machine by clicking `SSH`
 1. When the command line interface appears (linux) type the following:
