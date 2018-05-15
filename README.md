@@ -20,3 +20,9 @@ The following files are presented:
 - [hello.py](https://github.com/BartTh/pancreasread/blob/master/hello.py) &mdash; Main file processing and managing data
 - [user_readme](https://github.com/BartTh/pancreasread/blob/master/User_readme.md) &mdash; How to use this tool as a clinician
 - [developer_readme](https://github.com/BartTh/pancreasread/blob/master/Developer_readme.md) &mdash; How to use and set up a VM to run this application on the google cloud platform
+
+
+TODO:
+
+OUTLINE line
+manual new data
