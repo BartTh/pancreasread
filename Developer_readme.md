@@ -7,6 +7,7 @@ In order to run a virtual machine on the google cloud platform the following ste
 1. Create a project with automatic billing to acquire GPU access
 2. Navigate to compute engine
 3. Create an instance with the following specs:
+      - Zone: us-east1-d 
       - 1 vCPU
       - 4 GB RAM
       - 1 NVIDIA Tesla K80
@@ -14,6 +15,8 @@ In order to run a virtual machine on the google cloud platform the following ste
       - Allow HTTP & HTTPS traffic
       - Set a static external IP-address
       - Settings which are not mentioned can be left to default
+
+Note: other zones are possible for usage of Tesla P100 GPUs, however us zones do no require deposit of own funds.
 
 4. Navigate to  https://developer.nvidia.com/cuda-downloads and install CUDA 8.0:
       > sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb\
