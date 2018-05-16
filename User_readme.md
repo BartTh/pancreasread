@@ -3,7 +3,7 @@ Pancreasread user manual
 
 The user manual consists of two parts, acquiring access to the virtual machine, and converting a scan to the `.nii.gz` format
 
-Connect to the virtual machine (VM)
+1.1 Connect to the virtual machine (VM)
 -----
 
 In order to use the pancreatic analysis tool there are certain steps to be followed:
@@ -28,7 +28,7 @@ In order to use the pancreatic analysis tool there are certain steps to be follo
 13. Adjust settings to preference
 14. Stop the instance by clicking on the three vertical dots to the far right of the instance name when finished
 
-Convert the scans to .nii.gz
+1.2 Convert the scans to .nii.gz
 -----
 
 Scans generated in the clinic are saved as DICOM files and contain personal patient data. This data can be stripped by converting it to the NifTi file format (.nii), resulting in just the pixel values with some data about spacial orientation. In order to enhance processing speed and data transfer, the files can be compressed to the gzip (.gz). A way to convert and compress simultaneously is by using the Matlab script developed by [Xiangrui Li](https://nl.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-converter--nifti-tool-and-viewer). It is used in the following manner:
@@ -41,4 +41,22 @@ Scans generated in the clinic are saved as DICOM files and contain personal pati
 1. Select `.nii` as output format and tick `Compress` and `SPM 3D`
 1. In the preferences box tick the following: `Left-hand storage` and `Use parfor if needed`
 1. When the form is filled out, press `Start conversion`
-1. These files can then be uploaded to the static IP adress described in step 8. under connecting to the virtual machine
+1. These files can then be uploaded to webpage under the static IP adress described in step 8. Of the previous section
+
+1.3 Training the network from scratch
+-----
+
+When more data is available, the network can be retrained with this larger dataset in order to improve segmentation performance. This section describes how the data should be formatted and where it should be stored for training of the network. The newly acquired data (DICOM) can be processed to `.nii` in a similar manner as processing new scans described in section 1.2, however without compression (no tick at compress in step 6). When the new data has been converted to `.nii` the following steps are to be followed:
+
+1. data in bucket
+1. screen
+1. gsutil to folder
+1. rename to proper name
+1. run the following commands consecutively:
+> python3 ~/igor2/bin/cumed-build-tfrecords ~/data/MULTI_metadata.json ~/results/tfrecords --dimension 16 64 64 --channel CT --num-instances 3000 --num-classes 2; python3 ~/igor2/bin/create-folds ~/results/tfrecords/metadata.json ~/results/tfrecords/metadata ~/results/antwoord/ --hyperparameters ~/data/cumed-hyperparameters.json --num-folds 5; python3 ~/igor2/bin/cumed-train ~/results/tfrecords/metadata.fold-01.json --save-interval 2000
+5. Open a new screen window (Ctrl + a, then c) and run:
+> tensorboard --logdir=/home/bartrthomson/results/antwoord/fold-01/tensorboard --port 6006
+6. Navigate to the external ip-address:6006
+
+
+
