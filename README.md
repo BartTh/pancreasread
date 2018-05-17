@@ -6,3 +6,9 @@ The intention of this project was to make implementation of deep learning algori
 ![](https://github.com/BartTh/pancreasread/blob/master/images/FlowChart.png)
 
 How to get started as a user can be read under the tab [wiki](https://github.com/BartTh/pancreasread/wiki)
+
+TODO:
+
+JJ update opdracht \
+Data Hulk \
+PDF report \
